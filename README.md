@@ -10,9 +10,14 @@ The Microverse Capstone project for the Ruby module called "Build your own Bot" 
 - VsCode
 - Telegram channel BotFather
 
+### Ruby standards libraries:
+- uri
+- net/http
+
 ### Gem libraries:
 - bundler
 - dotenv
+- json
 - telegram-bot-ruby
 
 ### Documentations
