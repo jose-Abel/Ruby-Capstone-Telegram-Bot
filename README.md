@@ -13,6 +13,46 @@ The Microverse Capstone project for the Ruby module called "Build your own Bot" 
 
 ![screenshot](./app_screenshot_4.png)
 
+The Telegram Bot I created has the following commands:
+
+/start : To run the program starting the bot
+
+/price : To show the price of the top 10 cryptocurrencies
+
+/topnews : To show the top 3 news of all of the cryptocurrencies combined
+
+/tncbitcoin : Show the top 3 news of bitcoin 
+
+/tncethereum : Show the top 3 news of ethereum 
+
+/tnctether : Show the top 3 news of tether 
+
+/tncripple : Show the top 3 news of ripple
+
+/ttcbitcoin : Show the top 3 tweets of bitcoin
+
+/ttcethereum : Show the top 3 tweets of ethereum
+
+/ttctether : Show the top 3 tweets of tether
+
+/ttcripple : Show the top 3 tweets of ripple
+
+/trcbitcoin : Show the top 3 reddit posts of bitcoin
+
+/trcethereum : Show the top 3 reddit posts of ethereum
+
+trctether : Show the top 3 reddit posts of tether
+
+/trcripple : Show the top 3 reddit posts of ripple
+
+/ltrcbitcoin : Show the latest 3 reddit comments and tweets posts of bitcoin
+
+/ltrcethereum : Show the latest 3 reddit comments and tweets posts of ethereum
+
+/ltrctether : Show the latest 3 reddit comments and tweets posts of tether
+
+/ltrcripple : Show the latest 3 reddit comments and tweets posts of ripple
+
 
 ## Built With
 - Ruby programming language
