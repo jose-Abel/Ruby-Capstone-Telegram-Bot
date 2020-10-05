@@ -51,8 +51,14 @@ For this implementation of a Telegram Bot I created 2 classes and the main file 
 - 👤GitHub: [Jose Abel Ramirez](https://github.com/jose-Abel)
 - Linkedin: [Jose Abel Ramirez Frontany](https://www.linkedin.com/in/jose-abel-ramirez-frontany-7674a842/)
 
+
+### Setup
+You can either copy the code with git clone or with any other method and run it on your local environment. The commands to clone it is:
+- git clone https://github.com/jose-Abel/Ruby-Capstone-Telegram-Bot.git
+- cd Ruby-Capstone-Telegram-Bot
+
 ## Getting Started
-In order to run this bot, first create a .env file in the root of this project. Assigned 3 variable for the 3 API keys in the .env file, the API keys are the telegram token, the coinmarketcap API key and the crypto-news-api key.
+In order to run this bot, after cloning this repository and get inside the root of the repository, create a .env file in the root of this project. Assigned 3 variable for the 3 API keys in the .env file, the API keys are the telegram token, the coinmarketcap API key and the crypto-news-api key.
 
 ### Telegram Token
 Go to the Telegram Channel 'BotFather' and tyoe the command '/newbot'. The BotFather'll asked for the name of the bot, that will be the channel you visit it to run it, after you type it 'll asked for a username, after you type for a username BotFather'll send you a message that includes the HTTP API key needed for next instructions.
@@ -63,6 +69,7 @@ Go to https://www.coinmarketcap.com and choose to sign up to create a new free a
 ### cryptocontrol.io API Key
 Go to https://wwww.cryptocontrol.io/en/developers/apis and choose to sign up to create a new free account. After done click in the button GET API KEY and it will show you an API key needed for next instructions.
 
+### Running the Bot
 The 3 previous keys has to be stored in variables in the .env file with the following names TELEGRAM_TOKEN_KEY for the telegram token, COINMARKETCAP_API for the coinmarketcap API key and CRYPTO_NEWS for the crypto news API key. Then run 'bin/main.rb' in Unix OS such as Linux or Mac and 'ruby bin/main.rb' in Windows. After all the previous is done, visit the Telegram channel with the name you choose before for the bot and run the command /start.
 
 This Telegram Bot has the following commands:
@@ -105,9 +112,6 @@ trctether : Show the top 5 reddit posts of tether
 
 /ltrcripple : Show the latest 5 reddit comments and tweets posts of ripple
 
-### Setup
-You can either copy the code with git clone or with any other method and run it on your local environment. The commands to clone it is:
-- git clone https://github.com/jose-Abel/Ruby-Capstone-Telegram-Bot.git
 
 ### Run tests
 Run the tests for the linters.yml and rubocop and everything passed. The instructions to setup this tests are at this repository: [Rubocop instructions](https://github.com/microverseinc/linters-config/tree/master/ruby)
