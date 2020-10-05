@@ -13,13 +13,26 @@ The Microverse Capstone project for the Ruby module called "Build your own Bot" 
 
 ![screenshot](./app_screenshot_4.png)
 
-The Telegram Bot I created has the following commands:
 
-/start : To run the program starting the bot
+For this implementation of a Telegram Bot I created 2 classes and the main file where it runs the connection to the Bot. The files are:
 
-/price : To show the price of the top 10 cryptocurrencies
+- The Crypto Info class that initializes with the url for the coinmarketcap API, that has hte read and write getter methods. It has the public method top_10_listings in charge of calling the private method latest_listings and taking the hash that comes from that call and by creating a new array it gets the information needed from that hash and pass it to the new array, returninng the new array as output. The latest_listings private method is in charge of defining the endpoint for the API call and pass it onto the get_request private method that makes the API call.
 
-/topnews : To show the top 3 news of all of the cryptocurrencies combined
+- The Crypto News this class was build with the API from crypto-news-api gem, initializes defining the environment variable for API key. It has the public methods top_news, top_news_by_coin, top_tweets_by_coin, top_reddits_by_coin, latest_reddit_tweets_by_coin, and the private methods top_5 and helper_method. The top_news method calls the getTopNews from the gem, and pass the resulting hash to the private method top_5, for top_news_by_coin methods does the same as the previous method, calling the getTopNewsByCoin from the gem but it takes a coin as an argument. The top_tweets_by_coin method calls the getTopTweetsByCoin from the gem and through a while loop it gets the data needed from the returning hash and save it into an array to output that array. The previous methodology is the same applied in the methods top_reddits_by_coin and latest_reddit_tweets_by_coin. Lastly, the private method helper_method abstract some functionality that is applied to top_news and top_news_by_coin methods.
+
+- The main file has the connection to the Bot Client from Telegram. It opens the connection and through a case when conditional it instantiate an object form the other classes and call the respective method depending in the user command choice.
+
+## To run the Bot
+
+In order to run this bot, first create a .env file in the root of this project. Assigned 3 variable for the 3 API keys in the .env file, the API keys are the telegram token, the coinmarketcap API key and the crypto-news-api key. This keys has to be stored in variables with the following names TELEGRAM_TOKEN_KEY for the telegram token, COINMARKETCAP_API for the coinmarketcap API key and CRYPTO_NEWS for the crypto news API key. Then visit the Telegram channel "pricetop10crypto" and run the command /start.
+
+This Telegram Bot has the following commands:
+
+/start : Run the program starting the bot
+
+/price : Show the price of the top 10 cryptocurrencies
+
+/topnews : Show the top 3 news of all of the cryptocurrencies combined
 
 /tncbitcoin : Show the top 3 news of bitcoin 
 
