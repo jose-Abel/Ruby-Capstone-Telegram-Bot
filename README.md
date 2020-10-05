@@ -22,9 +22,37 @@ For this implementation of a Telegram Bot I created 2 classes and the main file 
 
 - The main file has the connection to the Bot Client from Telegram. It opens the connection and through a case when conditional it instantiate an object form the other classes and call the respective method depending in the user command choice.
 
-## To run the Bot
 
-In order to run this bot, first create a .env file in the root of this project. Assigned 3 variable for the 3 API keys in the .env file, the API keys are the telegram token, the coinmarketcap API key and the crypto-news-api key. This keys has to be stored in variables with the following names TELEGRAM_TOKEN_KEY for the telegram token, COINMARKETCAP_API for the coinmarketcap API key and CRYPTO_NEWS for the crypto news API key. Then visit the Telegram channel "pricetop10crypto" and run the command /start.
+## Built With
+- Ruby programming language
+- VsCode
+- Telegram channel BotFather
+
+### Ruby standards libraries:
+- uri
+- net/http
+
+### Gem libraries:
+- bundler
+- dotenv
+- json
+- telegram-bot-ruby
+- crypto-news-api
+
+### Documentations
+- https://docs.ruby-lang.org/
+- https://core.telegram.org/bots/api
+- https://coinmarketcap.com/api/documentation/v1/
+- https://www.rubydoc.info/gems/crypto-news-api/
+- https://hackernoon.com/how-to-create-a-telegram-bot-using-ruby-n7ag32c1
+
+## Author
+
+- 👤GitHub: [Jose Abel Ramirez](https://github.com/jose-Abel)
+- Linkedin: [Jose Abel Ramirez Frontany](https://www.linkedin.com/in/jose-abel-ramirez-frontany-7674a842/)
+
+## Getting Started
+In order to run this bot, first create a .env file in the root of this project. Assigned 3 variable for the 3 API keys in the .env file, the API keys are the telegram token, the coinmarketcap API key and the crypto-news-api key. This keys has to be stored in variables with the following names TELEGRAM_TOKEN_KEY for the telegram token, COINMARKETCAP_API for the coinmarketcap API key and CRYPTO_NEWS for the crypto news API key. Then run 'bin/main.rb' in Unix OS such as Linux or Mac and 'ruby bin/main.rb' in Windows. After all the previous is done, visit the Telegram channel "pricetop10crypto" and run the command /start.
 
 This Telegram Bot has the following commands:
 
@@ -66,47 +94,12 @@ trctether : Show the top 3 reddit posts of tether
 
 /ltrcripple : Show the latest 3 reddit comments and tweets posts of ripple
 
-
-## Built With
-- Ruby programming language
-- VsCode
-- Telegram channel BotFather
-
-### Ruby standards libraries:
-- uri
-- net/http
-
-### Gem libraries:
-- bundler
-- dotenv
-- json
-- telegram-bot-ruby
-- crypto-news-api
-
-### Documentations
-- https://docs.ruby-lang.org/
-- https://core.telegram.org/bots/api
-- https://coinmarketcap.com/api/documentation/v1/
-- https://www.rubydoc.info/gems/crypto-news-api/
-- https://hackernoon.com/how-to-create-a-telegram-bot-using-ruby-n7ag32c1
-
-## Author
-
-- 👤GitHub: [Jose Abel Ramirez](https://github.com/jose-Abel)
-- Linkedin: [Jose Abel Ramirez Frontany](https://www.linkedin.com/in/jose-abel-ramirez-frontany-7674a842/)
-
-## Getting Started
-You can clone this code anytime and run it with the Ruby interpreter in the Windows console or Unix terminal by typing 'ruby bin/main.rb' or it can run in Unix OS by typing 'bin/main.rb' in the terminal, without the 'ruby' interpreter command, since the main file has the shebang instruction at the top that makes it an executable file.
-
 ### Setup
-You can either copy the code with git clone or with any other method and run it on your local environment. The commands to clone it and then run the game are:
+You can either copy the code with git clone or with any other method and run it on your local environment. The commands to clone it is:
 - git clone https://github.com/jose-Abel/Ruby-Capstone-Telegram-Bot.git
-- cd Ruby-Capstone-Telegram-Bot
-- bin/main.rb (if you are in Linux or Mac)
-- ruby bin/main.rb (for Windows)
 
 ### Run tests
-Run the tests for the linters.yml and rubocop and everything pass. The instructions to setup this tests are at this repository: [Rubocop instructions](https://github.com/microverseinc/linters-config/tree/master/ruby)
+Run the tests for the linters.yml and rubocop and everything passed. The instructions to setup this tests are at this repository: [Rubocop instructions](https://github.com/microverseinc/linters-config/tree/master/ruby)
 
 For the linters, this tests runs once you make a PR, if you have it in the respective folder. In order to have this tests, after cloning this project:
  - cd Ruby-Capstone-Telegram-Bot
