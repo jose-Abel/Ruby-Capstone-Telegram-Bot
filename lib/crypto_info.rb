@@ -15,14 +15,30 @@ class Crypto_Info
     @url = "https://pro-api.coinmarketcap.com"
   end
 
+  def top_10_listings
+    latest_listings_hash = latest_listings
+    new_arr = []
+    i = 0
+    
+    while i < 10
+      new_hash = Hash.new(0)
+      new_hash["name"] = latest_listings_hash["data"][i]['name']
+      new_hash["price"] = latest_listings_hash["data"][i]["quote"]["USD"]["price"]
+      new_hash
+      new_arr << new_hash
+      i += 1
+    end
+    new_arr
+  end
+  
+  private
+
   def latest_listings
     endpoint = "/v1/cryptocurrency/listings/latest?limit=10"
     result = get_request(endpoint)
     my_hash = JSON.parse(result)
     my_hash
   end
-
-  private
 
   def get_request(endpoint)
     url_endpoint = url << endpoint
@@ -36,5 +52,4 @@ class Crypto_Info
     result = response.read_body
     result
   end
-
 end
