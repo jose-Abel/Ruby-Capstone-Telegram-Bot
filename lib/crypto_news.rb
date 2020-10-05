@@ -92,10 +92,10 @@ class Crypto_News
 
     while counter < 3
       new_hash["title"] = data[counter]["title"]
+      new_hash["description"] = data[counter]['description']
       new_hash["published_date"] = data[counter]['publishedAt']
       new_hash["source_domain"] = data[counter]['sourceDomain']
       new_hash["url"] = data[counter]['url']
-      new_hash["description"] = data[counter]['description']
 
       similar_array = helper_method(data, counter) if data[counter]["similarArticles"].length > 0
 

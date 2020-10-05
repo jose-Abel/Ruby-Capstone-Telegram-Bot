@@ -3,7 +3,16 @@
 
 # Ruby Capstone Telegram Bot
 
-The Microverse Capstone project for the Ruby module called "Build your own Bot" where I have to build a bot from one platform either Slack, Twitter or Telegram. I've choosen to build a bot from Telegram that gives me the price of the top 10 crypto currencies by making an API call to the coinmarketcap API and providing the latest news, twits and reddits post by using the gem crypto-news-api.
+The Microverse Capstone project for the Ruby module called "Build your own Bot" where I have to build a bot from one platform either Slack, Twitter or Telegram. I've choosen to build a bot from Telegram that gives me the price of the top 10 crypto currencies by making an API call to the coinmarketcap API and providing the latest news, tweets and reddits post by using the gem crypto-news-api.
+
+![screenshot](./app_screenshot_1.png)
+
+![screenshot](./app_screenshot_2.png)
+
+![screenshot](./app_screenshot_3.png)
+
+![screenshot](./app_screenshot_4.png)
+
 
 ## Built With
 - Ruby programming language
@@ -26,6 +35,7 @@ The Microverse Capstone project for the Ruby module called "Build your own Bot" 
 - https://core.telegram.org/bots/api
 - https://coinmarketcap.com/api/documentation/v1/
 - https://www.rubydoc.info/gems/crypto-news-api/
+- https://hackernoon.com/how-to-create-a-telegram-bot-using-ruby-n7ag32c1
 
 ## Author
 

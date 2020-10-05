@@ -14,16 +14,16 @@ Telegram::Bot::Client.run(token) do |bot|
     case message.text    
     when '/start'
 
-      text = "Hello, Welcome to the Top 10 crypto currencies chat bot, the place where you'll find the price for top 10 cryptos and the latest news about them. Please choose base on what you'll like to see now. Price choose '/p'. Top news type '/tnbitcoin', '/tnethereum', '/tntether', '/tnripple'. Top news by coin type '/tncbitcoin', '/tncethereum', '/tnctether', '/tncripple'. Top tweets by coin type '/ttcbitcoin', '/ttcethereum', '/ttctether', '/ttcripple'. Top reddits posts by coin type '/tncbitcoin', '/tncethereum', 'tnctether', '/tncripple'. Latests reddits post and tweets by coin type '/ltrcbitcoin', '/ltrcethereum', '/ltrctether', '/ltrcripple'."
+      text = "Hello, Welcome to the Top 10 crypto currencies chat bot, the place where you'll find the price for top 10 cryptos and the latest news about them. Please choose base on what you'll like to see now. Price choose '/price'. Top news type '/topnews'. Top news by coin type '/tncbitcoin', '/tncethereum', '/tnctether', '/tncripple'. Top tweets by coin type '/ttcbitcoin', '/ttcethereum', '/ttctether', '/ttcripple'. Top reddits posts by coin type '/tncbitcoin', '/tncethereum', 'tnctether', '/tncripple'. Latests reddits post and tweets by coin type '/ltrcbitcoin', '/ltrcethereum', '/ltrctether', '/ltrcripple'."
 
       bot.api.send_message(chat_id: message.chat.id, text: text, date: message.date)
     
-    when '/p'
+    when '/price'
       info = Crypto_Info.new
       text = info.top_10_listings
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
-    when '/tn'
+    when '/topnews'
       news = Crypto_News.new
       text = news.top_news
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
