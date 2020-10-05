@@ -63,7 +63,7 @@ Go to https://www.coinmarketcap.com and choose to sign up to create a new free a
 ### cryptocontrol.io API Key
 Go to https://wwww.cryptocontrol.io/en/developers/apis and choose to sign up to create a new free account. After done click in the button GET API KEY and it will show you an API key needed for next instructions.
 
-The 3 previous keys has to be stored in variables in the .env file with the following names TELEGRAM_TOKEN_KEY for the telegram token, COINMARKETCAP_API for the coinmarketcap API key and CRYPTO_NEWS for the crypto news API key. Then run 'bin/main.rb' in Unix OS such as Linux or Mac and 'ruby bin/main.rb' in Windows. After all the previous is done, visit the Telegram channel "pricetop10crypto" and run the command /start.
+The 3 previous keys has to be stored in variables in the .env file with the following names TELEGRAM_TOKEN_KEY for the telegram token, COINMARKETCAP_API for the coinmarketcap API key and CRYPTO_NEWS for the crypto news API key. Then run 'bin/main.rb' in Unix OS such as Linux or Mac and 'ruby bin/main.rb' in Windows. After all the previous is done, visit the Telegram channel with the name you choose before for the bot and run the command /start.
 
 This Telegram Bot has the following commands:
 
@@ -71,39 +71,39 @@ This Telegram Bot has the following commands:
 
 /price : Show the price of the top 10 cryptocurrencies
 
-/topnews : Show the top 3 news of all of the cryptocurrencies combined
+/topnews : Show the top 5 news of all of the cryptocurrencies combined
 
-/tncbitcoin : Show the top 3 news of bitcoin 
+/tncbitcoin : Show the top 5 news of bitcoin 
 
-/tncethereum : Show the top 3 news of ethereum 
+/tncethereum : Show the top 5 news of ethereum 
 
-/tnctether : Show the top 3 news of tether 
+/tnctether : Show the top 5 news of tether 
 
-/tncripple : Show the top 3 news of ripple
+/tncripple : Show the top 5 news of ripple
 
-/ttcbitcoin : Show the top 3 tweets of bitcoin
+/ttcbitcoin : Show the top 5 tweets of bitcoin
 
-/ttcethereum : Show the top 3 tweets of ethereum
+/ttcethereum : Show the top 5 tweets of ethereum
 
-/ttctether : Show the top 3 tweets of tether
+/ttctether : Show the top 5 tweets of tether
 
-/ttcripple : Show the top 3 tweets of ripple
+/ttcripple : Show the top 5 tweets of ripple
 
-/trcbitcoin : Show the top 3 reddit posts of bitcoin
+/trcbitcoin : Show the top 5 reddit posts of bitcoin
 
-/trcethereum : Show the top 3 reddit posts of ethereum
+/trcethereum : Show the top 5 reddit posts of ethereum
 
-trctether : Show the top 3 reddit posts of tether
+trctether : Show the top 5 reddit posts of tether
 
-/trcripple : Show the top 3 reddit posts of ripple
+/trcripple : Show the top 5 reddit posts of ripple
 
-/ltrcbitcoin : Show the latest 3 reddit comments and tweets posts of bitcoin
+/ltrcbitcoin : Show the latest 5 reddit comments and tweets posts of bitcoin
 
-/ltrcethereum : Show the latest 3 reddit comments and tweets posts of ethereum
+/ltrcethereum : Show the latest 5 reddit comments and tweets posts of ethereum
 
-/ltrctether : Show the latest 3 reddit comments and tweets posts of tether
+/ltrctether : Show the latest 5 reddit comments and tweets posts of tether
 
-/ltrcripple : Show the latest 3 reddit comments and tweets posts of ripple
+/ltrcripple : Show the latest 5 reddit comments and tweets posts of ripple
 
 ### Setup
 You can either copy the code with git clone or with any other method and run it on your local environment. The commands to clone it is:
