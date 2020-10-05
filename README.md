@@ -52,7 +52,7 @@ For this implementation of a Telegram Bot I created 2 classes and the main file 
 - Linkedin: [Jose Abel Ramirez Frontany](https://www.linkedin.com/in/jose-abel-ramirez-frontany-7674a842/)
 
 
-### Setup
+## Setup
 You can either copy the code with git clone or with any other method and run it on your local environment. The commands to clone it is:
 - git clone https://github.com/jose-Abel/Ruby-Capstone-Telegram-Bot.git
 - cd Ruby-Capstone-Telegram-Bot
@@ -113,7 +113,7 @@ trctether : Show the top 5 reddit posts of tether
 /ltrcripple : Show the latest 5 reddit comments and tweets posts of ripple
 
 
-### Run tests
+## Run tests
 Run the tests for the linters.yml and rubocop and everything passed. The instructions to setup this tests are at this repository: [Rubocop instructions](https://github.com/microverseinc/linters-config/tree/master/ruby)
 
 For the linters, this tests runs once you make a PR, if you have it in the respective folder. In order to have this tests, after cloning this project:
@@ -135,7 +135,7 @@ The commands to install and run rspecs in the Linux, Mac terminal or Windows cmd
 After creating the tests, to run them from the root directory:
 - rspec
 
-### Acknowledgments
+## Acknowledgments
 Appreciate the Ruby Team, and a special acknowledgment to Microverse for pushing us further into accomplishing our goals.
 
 
