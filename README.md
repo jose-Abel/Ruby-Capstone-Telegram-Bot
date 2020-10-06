@@ -110,7 +110,7 @@ trcbinancecoin : Show the top 5 reddit posts of binance coin
 /trcripple : Show the top 5 reddit posts of ripple
 
 
-## Run Rubocop
+## Run Rspecs
 The commands to install and run rspecs in the Linux, Mac terminal or Windows cmd are:
 
 - gem install rspec
