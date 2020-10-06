@@ -58,7 +58,7 @@ You can either copy the code with git clone or with any other method and run it 
 
 - git clone https://github.com/jose-Abel/Ruby-Capstone-Telegram-Bot.git
 - cd Ruby-Capstone-Telegram-Bot
-- bin/main.rb (For Linux or Mac users)
+- sudo bin/main.rb (For Linux or Mac users)
 - ruby bin/main.rb (For Windows users)
 - Once running have to go to the Telegram Channel 'pricetop10cryptocoin' to run the commands that makes the functionality
 
@@ -75,7 +75,9 @@ Go to https://www.coinmarketcap.com and choose to sign up to create a new free a
 Go to https://wwww.cryptocontrol.io/en/developers/apis and choose to sign up to create a new free account. After done click in the button GET API KEY and it will show you an API key needed for next instructions.
 
 ### Running the Bot
-The 3 previous keys has to be stored in variables in the .env file with the following names TELEGRAM_TOKEN_KEY for the telegram token, COINMARKETCAP_API for the coinmarketcap API key and CRYPTO_NEWS for the crypto news API key. Then run 'bin/main.rb' in Unix OS such as Linux or Mac and 'ruby bin/main.rb' in Windows. After all the previous is done, visit the Telegram channel with the name you choose before for the bot and run the command /start.
+The 3 previous keys has to be stored in variables in the .env file with the following names TELEGRAM_TOKEN_KEY for the telegram token, COINMARKETCAP_API for the coinmarketcap API key and CRYPTO_NEWS for the crypto news API key. 
+
+Then run 'sudo bin/main.rb' in Linux or Mac and 'ruby bin/main.rb' in Windows. After all the previous is done, visit the Telegram channel with the name you choose before for the bot and run the command /start.
 
 This Telegram Bot has the following commands:
 

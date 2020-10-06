@@ -9,8 +9,6 @@ class CryptoInfo
   attr_reader :url
   attr_writer :url
 
-  require JSON
-
   def initialize
     @url = 'https://pro-api.coinmarketcap.com'
   end
