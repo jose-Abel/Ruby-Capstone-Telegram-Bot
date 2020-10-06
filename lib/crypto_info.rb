@@ -15,6 +15,20 @@ class CryptoInfo
     @url = 'https://pro-api.coinmarketcap.com'
   end
 
+  def looping_top_10_listings
+    i = 0
+    new_arr = []
+    data = top_10_listings
+    while i < 10
+      new_arr << "Crypto Currency : #{data[i]['name']}"
+      new_arr << "Exchange Rate Dollar based : #{data[i]['price']}"
+      i += 1
+    end
+    new_arr
+  end
+
+  private
+
   def top_10_listings
     latest_listings_hash = latest_listings
     new_arr = []
@@ -29,8 +43,6 @@ class CryptoInfo
     end
     new_arr
   end
-
-  private
 
   def latest_listings
     endpoint = '/v1/cryptocurrency/listings/latest?limit=10'

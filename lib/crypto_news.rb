@@ -136,10 +136,3 @@ class CryptoNews
     new_arr
   end
 end
-
-# api = CryptoControl::QueryAPI.new(ENV['CRYPTO_NEWS'])
-
-# puts api.getLatestRedditPostsByCoin("binance-coin")
-
-# news = CryptoNews.new
-# puts news.looping_top_reddits_by_coin("tether")

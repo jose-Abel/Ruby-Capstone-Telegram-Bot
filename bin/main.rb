@@ -23,7 +23,8 @@ Telegram::Bot::Client.run(token) do |bot|
 
     when '/price'
       info = CryptoInfo.new
-      text = info.top_10_listings
+      arr = info.looping_top_10_listings
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/topnews'
