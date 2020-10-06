@@ -17,7 +17,7 @@ Telegram::Bot::Client.run(token) do |bot|
     case message.text
     when '/start'
 
-      text = "Hello, Welcome to the Top 10 crypto currencies chat bot, the place where you'll find the price for top 10 cryptos and the latest news about them. Please choose base on what you'll like to see now. Price choose '/price'. Top news '/topnews'. Top news by coin '/tncbitcoin', '/tncethereum', '/tnctether', '/tncripple'. Top tweets by coin '/ttcbitcoin', '/ttcethereum', '/ttctether', '/ttcripple'. Top reddits posts by coin '/trcbitcoin', '/trcethereum', 'trctether', '/trcripple'. Latests reddits post and tweets by coin '/ltrcbitcoin', '/ltrcethereum', '/ltrctether', '/ltrcripple'."
+      text = "Hello, Welcome to the Top 10 crypto currencies chat bot, the place where you'll find the price for top 10 cryptos and the latest news about them. Please choose base on what you'll like to see now. Price choose '/price'. Top news '/topnews'. Top news by coin '/tncbitcoin', '/tncethereum', '/tnctether', '/tncripple'. Top tweets by coin '/ttcbitcoin', '/ttcethereum', '/ttctether', '/ttcripple'. Top reddits posts by coin '/trcbitcoin', '/trcethereum', '/trcbinancecoin', '/trcripple'."
 
       bot.api.send_message(chat_id: message.chat.id, text: text, date: message.date)
 
@@ -28,87 +28,80 @@ Telegram::Bot::Client.run(token) do |bot|
 
     when '/topnews'
       news = CryptoNews.new
-      text = news.top_news
-      bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
+      arr = news.looping_on_news
+      text = arr.map(&:inspect).join(', ')
+      bot.api.send_message(chat_id: message.chat.id, text: text, date: message.date)
 
     when '/tncbitcoin'
       news = CryptoNews.new
-      text = news.top_news_by_coin('bitcoin')
+      arr = news.looping_top_news_by_coin('bitcoin')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/tncethereum'
       news = CryptoNews.new
-      text = news.top_news_by_coin('ethereum')
+      arr = news.looping_top_news_by_coin('ethereum')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/tnctether'
       news = CryptoNews.new
-      text = news.top_news_by_coin('tether')
+      arr = news.looping_top_news_by_coin('tether')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/tncripple'
       news = CryptoNews.new
-      text = news.top_news_by_coin('ripple')
+      arr = news.looping_top_news_by_coin('ripple')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/ttcbitcoin'
       news = CryptoNews.new
-      text = news.top_tweets_by_coin('bitcoin')
+      arr = news.looping_top_tweets_by_coin('bitcoin')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/ttcethereum'
       news = CryptoNews.new
-      text = news.top_tweets_by_coin('ethereum')
+      arr = news.looping_top_tweets_by_coin('ethereum')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/ttctether'
       news = CryptoNews.new
-      text = news.top_tweets_by_coin('tether')
+      arr = news.looping_top_tweets_by_coin('tether')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/ttcripple'
       news = CryptoNews.new
-      text = news.top_tweets_by_coin('ripple')
+      arr = news.looping_top_tweets_by_coin('ripple')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/trcbitcoin'
       news = CryptoNews.new
-      text = news.top_reddits_by_coin('bitcoin')
+      arr = news.looping_top_reddits_by_coin('bitcoin')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/trcethereum'
       news = CryptoNews.new
-      text = news.top_reddits_by_coin('ethereum')
+      arr = news.looping_top_reddits_by_coin('ethereum')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
-    when '/trctether'
+    when '/trcbinancecoin'
       news = CryptoNews.new
-      text = news.top_reddits_by_coin('tether')
+      arr = news.looping_top_reddits_by_coin('binance-coin')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
 
     when '/trcripple'
       news = CryptoNews.new
-      text = news.top_reddits_by_coin('ripple')
-      bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
-
-    when '/ltrcbitcoin'
-      news = CryptoNews.new
-      text = news.latest_reddit_tweets_by_coin('bitcoin')
-      bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
-
-    when '/ltrcethereum'
-      news = CryptoNews.new
-      text = news.latest_reddit_tweets_by_coin('ethereum')
-      bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
-
-    when '/ltrctether'
-      news = CryptoNews.new
-      text = news.latest_reddit_tweets_by_coin('tether')
-      bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
-
-    when '/ltrcripple'
-      news = CryptoNews.new
-      text = news.latest_reddit_tweets_by_coin('ripple')
+      arr = news.looping_top_reddits_by_coin('ripple')
+      text = arr.map(&:inspect).join(', ')
       bot.api.send_message(chat_id: message.chat.id, text: text.to_s, date: message.date)
     end
   end
