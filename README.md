@@ -53,6 +53,10 @@ For this implementation of a Telegram Bot I created 2 classes and the main file 
 - 👤GitHub: [Jose Abel Ramirez](https://github.com/jose-Abel)
 - Linkedin: [Jose Abel Ramirez Frontany](https://www.linkedin.com/in/jose-abel-ramirez-frontany-7674a842/)
 
+## Live Version
+
+[live version](https://t.me/Price10CryptoBot)
+
 ## Setup
 
 You can either copy the code with git clone or with any other method and run it on your local environment. The .env file was added so anyone that downloads this code can run it with the following commands:
