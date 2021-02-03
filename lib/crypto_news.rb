@@ -33,13 +33,14 @@ class CryptoNews
     y = 0
     new_arr = []
     while y < 10
+      new_arr << "Number : #{y + 1}"
       new_arr << "Title : #{array_of_hashes[y]['title']}"
       new_arr << "Domain : #{array_of_hashes[y]['domain']}"
       new_arr << "Url : #{array_of_hashes[y]['url']}"
 
       y += 1
     end
-    return new_arr
+    new_arr
   end
   
   def get_individual_crypto(ticker)
@@ -74,6 +75,8 @@ class CryptoNews
     new_arr
   end
 
+  private
+
   def get_request(url)
     uri = URI(url)
     http = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https')
@@ -84,11 +87,5 @@ class CryptoNews
     my_hash
   end
 end
-
-# cyptonews = CryptoNews.new
-
-# puts cyptonews.get_latest_news()
-
-# puts cyptonews.get_individual_crypto("BTC")
 
 
