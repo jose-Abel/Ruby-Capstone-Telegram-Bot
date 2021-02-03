@@ -2,7 +2,7 @@
 
 # Ruby Capstone Telegram Bot
 
-The Microverse Capstone project for the Ruby module called "Build your own Bot" where I have to build a bot from one platform either Slack, Twitter or Telegram. I've choosen to build a bot from Telegram that gives me the price of the top 10 crypto currencies by making an API call to the coinmarketcap API and providing the latest news, tweets and reddits post by using the gem crypto-news-api.
+The Microverse Capstone project for the Ruby module called "Build your own Bot" where I have to build a bot from one platform either Slack, Twitter or Telegram. I've choosen to build a bot from Telegram that gives me the price of the top 10 crypto currencies by making an API call to the coinmarketcap API and providing the latest news and news per each coin of the top 10 cryptos through the cryptopanic.com API.
 
 ![screenshot](./images/app_screenshot_1.png)
 
@@ -14,9 +14,9 @@ The Microverse Capstone project for the Ruby module called "Build your own Bot" 
 
 For this implementation of a Telegram Bot I created 2 classes and the main file where it runs the connection to the Bot. The files are:
 
-- The Crypto Info class that initializes with the url for the coinmarketcap API, the url instance variable has the getter and setter methods. It has the public method looping_top_10_listings that loops over the array of hashes returned by the private method top_10_listings. The private methods are top_10_listings and latest_listings top_10_listings is in charge of calling the latest_listings and taking the hash that comes from that call and by creating a new array it gets the right data needed and stored it on a new array, returninng the new array as output. The latest_listings private method is in charge of defining the endpoint for the API call and pass it onto the get_request private method that makes the API call.
+- The Crypto Info class that initializes with the url for the coinmarketcap API, the url instance variable has the getter and setter methods. It has the public method looping_top_10_listings that loops over the array of hashes returned by the private method top_10_listings. The private methods are top_10_listings and latest_listings, top_10_listings is in charge of calling the latest_listings and taking the hash that comes from that call and by creating a new array it gets the right data needed and stored it on a new array, returninng the new array as output. The latest_listings private method is in charge of defining the endpoint for the API call and pass it onto the get_request private method that makes the API call.
 
-- The Crypto News this class was build with the API from crypto-news-api gem, initializes defining the environment variable for API key. It has the public methods looping*on_news, looping_top_news_by_coin, looping_top_tweets_by_coin and looping_top_reddits_by_coin, and the private methods top_news, top_news_by_coin, top_tweets_by_coin, top_reddits_by_coin and top_5. The public methods with the looping* at the begginig of the name only does 1 function and it's looping over the array returned by the private methods that are in charge of connecting everything for the API call. This is done so the data can be display more user friendly over the telegram channel. For the private methods, top_news calls the getTopNews from the gem, and pass the resulting hash to the method top_5, for top_news_by_coin methods does the same as the previous method, calling the getTopNewsByCoin from the gem but it takes a coin as an argument. The top_tweets_by_coin method calls the getTopTweetsByCoin from the gem and through a while loop it gets the data needed from the returning hash and save it into an array to output that array. The previous methodology is the same applied in the methods top_reddits_by_coin.
+- The Crypto News this class was build with the API from https://cryptopanic.com, initializes defining the environment variable for API key. It has the public methods get_latest_news and get_individual_crypto and the private method get_request. The public methods are in charge of calling the get_request private method to do the HTTP request to the API, and then processing the returned hash to push into an array of strings that will represent the message that the Telegram Bot will sent in the message.
 
 - The main file has the connection to the Bot Client from Telegram. It opens the connection and through a case when conditional it instantiate an object form the other classes and call the respective method depending in the user command choice.
 
@@ -37,15 +37,14 @@ For this implementation of a Telegram Bot I created 2 classes and the main file 
 - dotenv
 - json
 - telegram-bot-ruby
-- crypto-news-api
 
 ### Documentations
 
 - https://docs.ruby-lang.org/
 - https://core.telegram.org/bots/api
 - https://coinmarketcap.com/api/documentation/v1/
-- https://www.rubydoc.info/gems/crypto-news-api/
-- https://api-docs.cryptocontrol.io/
+- https://cryptopanic.com/developers/api/
+- https://medium.com/@jamezjaz/how-to-deploy-ruby-bot-live-on-heroku-b4fbab282445
 - https://hackernoon.com/how-to-create-a-telegram-bot-using-ruby-n7ag32c1
 
 ## Author
@@ -69,7 +68,7 @@ You can either copy the code with git clone or with any other method and run it 
 
 ## Getting Started
 
-In order to run this bot, if you want to have your own channel for it and your own API keys, after cloning this repository and get inside the root of the repository, create a .env file in the root of this project. Assigned 3 variable for the 3 API keys in the .env file, the API keys are the telegram token, the coinmarketcap API key and the crypto-news-api key.
+In order to run this bot, if you want to have your own channel for it and your own API keys, after cloning this repository and get inside the root of the repository, create a .env file in the root of this project. Assigned 3 variable for the 3 API keys in the .env file, the API keys are the telegram token, the coinmarketcap API key and the cryptopanig API key.
 
 ### Telegram Token
 
@@ -79,9 +78,9 @@ Go to the Telegram Channel 'BotFather' and tyoe the command '/newbot'. The BotFa
 
 Go to https://www.coinmarketcap.com and choose to sign up to create a new free account. After that is done click in Products tab and then in Crypto API. It will take you to the Dashboad for developers and then hover the mouse in the field below API Key and will display a button named COPY KEY, once clicked the message in the button changed to Copied! and that is the API key needed for next instructions.
 
-### cryptocontrol.io API Key
+### cryptopanic API Key
 
-Go to https://cryptocontrol.io/en/developers/apis and choose to sign up to create a new free account. After done click in the button GET API KEY and it will show you an API key needed for next instructions.
+Go to https://cryptopanic.com/developers/api/ and choose to sign up to create a new free account. After done copy the API KEY below "Your free API auth token" message.
 
 ### Running the Bot
 
@@ -95,31 +94,27 @@ This Telegram Bot has the following commands:
 
 /price : Show the price of the top 10 cryptocurrencies
 
-/topnews : Show the top 5 news of all of the cryptocurrencies combined
+/topnews : Show the top 10 news of all of the cryptocurrencies combined
 
-/tncbitcoin : Show the top 5 news of bitcoin
+/tncbitcoin : Show the top 10 news of bitcoin
 
-/tncethereum : Show the top 5 news of ethereum
+/tncethereum : Show the top 10 news of ethereum
 
-/tnctether : Show the top 5 news of tether
+/tnctether : Show the top 10 news of tether
 
-/tncripple : Show the top 5 news of ripple
+/tncripple : Show the top 10 news of ripple
 
-/ttcbitcoin : Show the top 5 tweets of bitcoin
+/tncpolkadot : Show the top 10 news of polkadot
 
-/ttcethereum : Show the top 5 tweets of ethereum
+/tnccardano : Show the top 10 tweets of cardano
 
-/ttctether : Show the top 5 tweets of tether
+/tncchainlink : Show the top 10 news of chainlink
 
-/ttcripple : Show the top 5 tweets of ripple
+/tnclitecoin : Show the top 10 news of litecoin
 
-/trcbitcoin : Show the top 5 reddit posts of bitcoin
+/tncbinancecoin : Show the top 10 news of binance coin
 
-/trcethereum : Show the top 5 reddit posts of ethereum
-
-trcbinancecoin : Show the top 5 reddit posts of binance coin
-
-/trcripple : Show the top 5 reddit posts of ripple
+/tncstellar : Show the top 10 news of stellar
 
 ## Run Rspecs
 
